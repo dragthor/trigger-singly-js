@@ -1,0 +1,7 @@
+.DS_store
+.DS_Store
+.log
+.template/
+*~
+development/
+release/

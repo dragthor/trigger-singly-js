@@ -1,0 +1,34 @@
+{
+	"config_version": "2",
+	"name": "singly-trigger-js",
+	"author": "kris.krause@gmail.com",
+	"version": "0.1",
+	"platform_version": "v1.4",
+	"description": "trigger.io + singly",
+	"modules": {
+		"logging": {
+			"level": "DEBUG"
+		},
+		"file": true,
+		"is": true,
+		"prefs": true,
+		"request": {
+            "permissions": [
+                "https://api.singly.com/*", 
+				"http://dragthor.github.com/*"
+            ]
+		},
+		"tools": true,
+		"tabs": true,
+		"topbar": true,
+		"event": true,
+		"display": {
+            "orientations": {
+                "default": "any", 
+                "ipad": "any", 
+                "android": "any", 
+                "iphone": "any"
+            }
+        }
+	}
+}

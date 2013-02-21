@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <title>trigger-singly-js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+    <script type="text/template" id="signInPage">
+        <div id="page">
+            <div data-role="content">
+            <p><input type="button" value="Sign In - Twitter" id="btnTwitter" /></p>
+
+            <p><input type="button" value="Sign In - Facebook " id="btnFacebook" /></p>
+
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="settingsPage">
+        <div id="page">
+            <div data-role="content">
+                <div id="profileSummary">
+                    {{ _(profiles).each(function(profile) { }}
+
+                    <div id="profileAvatar">
+                        <img src="{{= profile.get("thumbnail_url") }}" class="profileAvatar" />
+                        <br/>
+                        {{= profile.get("name") }}
+                    </div>
+
+                    <div id="profileMap">
+                        <img src="https://maps.googleapis.com/maps/api/staticmap?center={{= profile.get("location") }}&amp;zoom=10&amp;size=100x100&amp;&amp;sensor=false" class="profileAvatar">
+                        <br/>Last Location
+                    </div>
+
+                    {{ }); }}
+                </div>
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-role="list-divider" role="heading">
+                        Connect Services
+                    </li>
+                    
+                    {{ _(profiles).each(function(profile) { }}
+                    
+                        {{ var services = profile.get("services"); }}
+
+                        {{ for(var prop in services) { }}
+                            <li data-theme="c">{{= prop }}</li>
+                        {{ } }}
+
+                    {{ }); }}
+                
+                    <li data-role="list-divider" role="heading">
+                        Availble Services
+                        <li data-theme="c"><a id="btnTwitter" data-transition="slide">Twitter</a></li>
+                        <li data-theme="c"><a id="btnFacebook" data-transition="slide">Facebook</a></li>
+                    </li>
+                </ul>
+            </div>
+
+            <div data-role="content">
+                <input type="button" value="Sign Out" id="btnSignout" />
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="overviewPage">
+        <div id="page">
+            <ul data-role="listview" data-divider-theme="b" data-inset="false">
+                <li data-role="list-divider" role="heading">
+                    Friends
+                </li>
+
+                {{ _(friends).each(function(friend) { }}
+
+                <li data-theme="c">
+                    <div class="friendName">{{= friend.get("name") }}
+                        <p class="friendInfo">
+                        Connected: 
+                        {{ var services = friend.get("services"); }}
+
+                        {{ for(var prop in services) { }}
+                            {{= prop }}
+                        {{ } }}                    
+                        </p>
+                    </div>
+
+                    <div class="friendAvatar" style="background-image:url({{= friend.get("thumbnail_url") }});"></div>
+                </li>
+
+                {{ }); }}
+            </ul>
+
+
+            <div data-role="content">
+                <input type="button" value="More" id="btnMore" />
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jqm-config.js"></script>
+    <script type="text/javascript" src="lib/jquery.mobile-1.2.0.min.js"></script>
+    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <script type="text/javascript" src="lib/backbone-min.js"></script>
+    <script type="text/javascript" src="js/setup.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/models.js"></script>
+    <script type="text/javascript" src="js/views.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body></body>
+
+</html>

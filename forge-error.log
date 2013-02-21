@@ -1,0 +1,65 @@
+2013-01-15 14:00:57,526 [   INFO] Forge tools running at version 3.3.34
+2013-01-15 14:00:57,697 [  DEBUG] ignoring non-target directory reload
+2013-01-15 14:00:57,697 [  DEBUG] Enabled platforms: ['android']
+2013-01-15 14:00:57,697 [  DEBUG] Using configuration file value u'' for android.sdk
+2013-01-15 14:00:57,697 [  DEBUG] Forge build tools version: 3.3.34
+2013-01-15 14:00:57,697 [  DEBUG] main: {"server": "https://trigger.io/api/"}
+2013-01-15 14:00:57,697 [  DEBUG] port: 38394
+2013-01-15 14:00:57,697 [  DEBUG] GET https://trigger.io/api/auth/loggedin
+2013-01-15 14:00:58,510 [  DEBUG] Checking API response for success or error
+2013-01-15 14:00:58,510 [  DEBUG] already authenticated via cookie - continuing
+2013-01-15 14:00:58,510 [  DEBUG] POST https://trigger.io/api/track/
+2013-01-15 14:00:58,510 [  DEBUG] <ForgeTask (android)> running...
+2013-01-15 14:00:58,510 [  DEBUG] <ForgeTask (android)> script:
+[{'do': {'run_android': ('C:\\Users\\Krause\\Documents\\GitHub\\trigger-singly-js\\development',
+                         u'',
+                         None,
+                         True,
+                         None)},
+  'when': {'platform_is': 'android'}}]
+2013-01-15 14:00:58,510 [  DEBUG] Checking to see if java is already in the PATH
+2013-01-15 14:00:58,510 [  DEBUG] Running: java -version
+2013-01-15 14:00:58,674 [  DEBUG] Can run java directly from PATH
+2013-01-15 14:00:58,674 [  DEBUG] Using configuration file value u'' for android.sdk
+2013-01-15 14:01:00,543 [  ERROR] Couldn't find Android SDK, please set this in your local config for this app.
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "android": {
+        "sdk": "C:\\path\\to\\android-sdk"
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --android.sdk "C:\path\to\android-sdk"
+
+2013-01-15 14:01:00,546 [  DEBUG] Traceback (most recent call last):
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\async.py", line 96, in run
+    result = self._target(*self._args, **self._kwargs)
+  File "C:\Users\Krause\AppData\Local\Trigger Toolkit\build-tools\forge\main.py", line 414, in run
+    build_to_run=build_to_run,
+  File "C:\Users\Krause\Documents\GitHub\trigger-singly-js\.template\generate_dynamic\customer_goals.py", line 125, in run_app
+    build_to_run.run()
+  File "C:\Users\Krause\Documents\GitHub\trigger-singly-js\.template\generate_dynamic\build.py", line 337, in run
+    self._call_with_params(task_method, task_args)
+  File "C:\Users\Krause\Documents\GitHub\trigger-singly-js\.template\generate_dynamic\build.py", line 296, in _call_with_params
+    return method(self, *params)
+  File "C:\Users\Krause\Documents\GitHub\trigger-singly-js\.template\generate_dynamic\android_tasks.py", line 631, in run_android
+    path_info = _find_or_install_sdk(build)
+  File "C:\Users\Krause\Documents\GitHub\trigger-singly-js\.template\generate_dynamic\android_tasks.py", line 289, in _find_or_install_sdk
+    examples={"android.sdk": path.abspath("/path/to/android-sdk")},
+  File "C:\Users\Krause\Documents\GitHub\trigger-singly-js\.template\generate_dynamic\lib.py", line 413, in local_config_problem
+    raise BASE_EXCEPTION(exc_message)
+ForgeError: Couldn't find Android SDK, please set this in your local config for this app.
+
+To resolve this problem, you can modify the file "local_config.json" to something like:
+{
+    "android": {
+        "sdk": "C:\\path\\to\\android-sdk"
+    }
+}
+
+Or pass commandline arguments to forge:
+forge --android.sdk "C:\path\to\android-sdk"
+
+

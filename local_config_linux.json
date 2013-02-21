@@ -1,0 +1,21 @@
+{
+	"general": {
+	},
+	"ios": {
+		"profiles": {
+			"DEFAULT": {
+				"provisioning_profile": ""
+			}
+		}
+	},
+	"android": {
+		"sdk": "/home/kkrause/Documents/android-sdk-linux",
+		
+		"profiles": {
+			"DEFAULT": {
+				"keystore": "",
+				"keyalias": ""
+			}
+		}
+	}
+}

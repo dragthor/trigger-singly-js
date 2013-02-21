@@ -1,0 +1,21 @@
+{
+	"general": {
+	},
+	"ios": {
+		"profiles": {
+			"DEFAULT": {
+				"provisioning_profile": ""
+			}
+		}
+	},
+	"android": {
+		"sdk": "C:\\Users\\Krause\\android-sdks",
+		
+		"profiles": {
+			"DEFAULT": {
+				"keystore": "",
+				"keyalias": ""
+			}
+		}
+	}
+}

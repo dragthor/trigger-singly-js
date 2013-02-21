@@ -1,0 +1,2 @@
+trigger-singly-js
+=================
