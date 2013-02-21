@@ -1,7 +1,7 @@
 trigger-singly-js
 =================
 
-An example trigger.io mobile application with Singly. 
+An example trigger.io (http://trigger.io) mobile application with Singly (http://singly.com). The user can sign in to your application using Twitter or Facebook (or any other Singly service), view friends, and retrieve their profile.
 
 Utilizes the following:
 
